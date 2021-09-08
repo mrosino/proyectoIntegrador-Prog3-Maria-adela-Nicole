@@ -13,7 +13,7 @@ class Main extends Component {
         <main>
           <button type="button">Cargar más tarjetas</button>
           <section className="card-container">
-            <Card />
+            <Card title="Hola"/>
           </section>
         </main>
       </React.Fragment>
