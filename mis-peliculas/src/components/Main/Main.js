@@ -11,13 +11,14 @@ class Main extends Component {
 
   }
 componentDidMount(){
-  fetch("https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=1")
+  fetch("https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=7")
   .then(response => response.json())
   .then(movies => {
     this.setState({
       movies:movies.results,
       loaded: true,
     })
+    console.log(movies);
 
   }) 
 

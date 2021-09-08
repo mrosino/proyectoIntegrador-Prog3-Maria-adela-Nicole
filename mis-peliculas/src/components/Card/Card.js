@@ -10,22 +10,14 @@ render (){
 
   return (
     <React.Fragment>
-          <img src="./img/image-default.png" alt="" />
           <h3>{this.props.title}</h3>
-          <p className="description">{this.props.description}</p>
+          <img src= {"https://image.tmdb.org/t/p/w342/" + this.props.poster_path} alt="" />
+          <p className="description"> Descripcion: {this.props.overview}</p>
           <section className="aditional-info">
-            <p>{this.props.genre}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
-            </p>
-            <p>{this.props.rating}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
-            </p>
-            <p>{this.props.atp}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui
-              atque.
-            </p>
+            <p>Genero {this.props.genre}</p>
+            <p>Rating {this.props.vote_average}</p>
+            <p>{this.props.adult === false ? "ATP": "No ATP"}  </p>
+        
           </section>
           <a href="#">Ver más</a>
    

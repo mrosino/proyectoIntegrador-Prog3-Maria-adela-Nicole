@@ -14,7 +14,7 @@ function Cards (props){
         </section>
         <main>
           {props.movies.map ((movies,idx) => {
-            return  < Card title={movies.title} description ={movies.description} genre = {movies.genre} rating= {movies.rating} atp={movies.atp} key= {idx} />
+            return  < Card title={movies.title} overview ={movies.overview} genre = {movies.genre} vote_average= {movies.vote_average} adult={movies.adult} poster_path= {movies.poster_path} key= {idx} />
           })}
           
 
