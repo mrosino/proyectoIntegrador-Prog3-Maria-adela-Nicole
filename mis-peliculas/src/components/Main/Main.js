@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Cards from "../Cards/Cards";
-import Card  from "../Card/Card";
+//import Card  from "../Card/Card";
 
 class Main extends Component {
   constructor(props) {
