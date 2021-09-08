@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import Card from "../Card/Card"
 
 function Cards (props){
@@ -13,8 +13,10 @@ function Cards (props){
           <i className="far fa-window-close"></i>
         </section>
         <main>
-          {props.movies.map ((movies))}
-          < Card />
+          {props.movies.map ((movies,idx) => {
+            return  < Card title={movies.title} description ={movies.description} genre = {movies.genre} rating= {movies.rating} atp={movies.atp} key= {idx} />
+          })}
+          
 
         </main>
       </article>
