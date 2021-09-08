@@ -20,7 +20,7 @@ render (){
         </section>
         <main>
           <img src="./img/image-default.png" alt="" />
-          <h3>Título/ Nombre</h3>
+  <h3>{this.props.title}</h3>
           <p className="description">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque
             velit minus facere laboriosam voluptatem impedit ea unde labore
