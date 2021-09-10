@@ -24,7 +24,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 80%;
-  align-self: center;
+ 
   column-count: 2;
 }
 .card{
@@ -34,23 +34,28 @@ main {
   border-radius: 10px;
   background-color: violet;
   text-align: center;
+  height: 100%;
   
   
 }
 
-.navigation {
-width: 30%;
-column-count: 2;
-}
+
+
 
 img.imagen{
   width: 30%;
  
 }
 
+.card-container {
+column-count: 2;
+align-items: center;
+width: 100%;
+height: 100%;
+}
+
 .Prueba {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  column-count: 2;
+  width: 100%;
+  height: 100%;
+
 }
