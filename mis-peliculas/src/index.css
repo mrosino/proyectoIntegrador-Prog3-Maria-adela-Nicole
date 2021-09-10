@@ -1,15 +1,14 @@
 *{
   box-sizing: border-box;
   margin: 0;
-  
+
   
   
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:   'Oxygen','Roboto', sans-serif;
+    background-color: #DBD3D8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -20,7 +19,12 @@ h1 {
   font-size: 24px;
 }
 header{
-  background-color:red;
+  background: rgb(55,91,109);
+  background: -moz-linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
+  background: -webkit-linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
+  background: linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375b6d",endColorstr="#223843",GradientType=1);
+  height: 100px
 }
 main {
   display: flex;
@@ -29,11 +33,13 @@ main {
   column-count: 2;
 }
 .card{
-  position: relative;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
   margin: 10px auto;
   border-radius: 10px;
-  background-color: violet;
+  background-color: #D8B4A0;
   text-align: center;
   
   
@@ -43,12 +49,14 @@ main {
 
 
 img.imagen{
-  width: 30%;
+  width: 100%;
  
 }
 
 .card-container {
-column-count: 2;
+column-count: 4;
+margin-top: auto;
+padding: 20px;
 align-items: center;
 width: 100%;
 

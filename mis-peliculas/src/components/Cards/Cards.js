@@ -4,7 +4,7 @@ import Card from "../Card/Card"
 function Cards (props){
   return (
     <React.Fragment>
-   <article className="Prueba">
+ 
         <section className="navigation">
           <div>
             <i className="fas fa-chevron-left"></i>
@@ -19,7 +19,7 @@ function Cards (props){
           
 
         </main>
-      </article>
+    
     </React.Fragment>
   )
 
