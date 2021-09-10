@@ -8,6 +8,7 @@ class Main extends Component {
     this.state = {
       movies: [],
       genre : [],
+      nextUrl: '',
     };
 
   }
@@ -18,6 +19,8 @@ componentDidMount(){
     this.setState({
       movies:movies.results,
       loaded: true,
+      nextUrl: movies.info.next,
+
     })
     console.log(movies);
 
@@ -32,6 +35,26 @@ componentDidMount(){
   })
  
 }
+
+
+addMore () {
+  let url = this.state.nextUrl
+  fetch(url)
+  .then(response => response.json())
+  .then(movies => {
+    this.setState({
+     nextUrl: movies.info.next,
+     movies: this.state.movies.concat(movies.results)
+
+    })
+    console.log(movies);
+  
+  }  )
+
+}
+
+
+
   render = () => {
     //poner loader
     return (
