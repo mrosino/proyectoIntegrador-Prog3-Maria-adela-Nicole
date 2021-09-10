@@ -3,7 +3,7 @@ function Header () {
 return (
     < React.Fragment>
     <header>
-    <img src="./img/logoSMA.png" alt="" />
+    <img src="../img/logoSMA.png" alt="" />
     <section>
         <div>
             <p>Más Populares </p>
