@@ -1,30 +1,37 @@
-*{
+* {
   box-sizing: border-box;
   margin: 0;
-
-  
-  
 }
 body {
   margin: 0;
-  font-family:   'Oxygen','Roboto', sans-serif;
-    background-color: #DBD3D8;
+  font-family: "Oxygen", "Roboto", sans-serif;
+  background-color: #dbd3d8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 h1 {
   font-size: 24px;
 }
-header{
-  background: rgb(55,91,109);
-  background: -moz-linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
-  background: -webkit-linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
-  background: linear-gradient(5deg, rgba(55,91,109,1) 0%, rgba(34,56,67,1) 100%);
+header {
+  background: rgb(55, 91, 109);
+  background: -moz-linear-gradient(
+    5deg,
+    rgba(55, 91, 109, 1) 0%,
+    rgba(34, 56, 67, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    5deg,
+    rgba(55, 91, 109, 1) 0%,
+    rgba(34, 56, 67, 1) 100%
+  );
+  background: linear-gradient(
+    5deg,
+    rgba(55, 91, 109, 1) 0%,
+    rgba(34, 56, 67, 1) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375b6d",endColorstr="#223843",GradientType=1);
-  height: 100px
+  height: 100px;
 }
 main {
   display: flex;
@@ -32,34 +39,27 @@ main {
   width: 100%;
   column-count: 2;
 }
-.card{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 300px;
+.card {
+  flex: 1 0 21%;
+  display: inline-block;
+  margin: 5px;
+  height: 150px;
+  width: 25%;
   margin: 10px auto;
   border-radius: 10px;
-  background-color: #D8B4A0;
+  background-color: #d8b4a0;
   text-align: center;
-  
-  
+  padding: 20px;
 }
 
-
-
-
-img.imagen{
+img.imagen {
   width: 100%;
- 
 }
-
 .card-container {
-column-count: 4;
-margin-top: auto;
-padding: 20px;
-align-items: center;
-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 
+  margin-top: auto;
+  padding: 20px;
+  align-items: center;
 }
-
-
