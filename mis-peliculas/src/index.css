@@ -12,6 +12,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 h1 {
   font-size: 24px;
 }
@@ -23,17 +25,32 @@ main {
   flex-direction: column;
   width: 80%;
   align-self: center;
+  column-count: 2;
 }
 .card{
   position: relative;
-  width: 80%;
+  width: 60%;
   margin: 20px auto;
   border-radius: 10px;
   background-color: violet;
   text-align: center;
   
+  
 }
+
+.navigation {
+width: 30%;
+column-count: 2;
+}
+
 img.imagen{
   width: 30%;
  
+}
+
+.Prueba {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  column-count: 2;
 }
