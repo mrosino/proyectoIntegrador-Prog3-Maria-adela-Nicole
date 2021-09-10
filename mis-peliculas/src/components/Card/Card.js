@@ -16,6 +16,7 @@ render (){
           <div> 
           <p className="description"> Descripcion: {this.props.overview}</p>
           </div>
+          {/* <button onClick = {( => this.props.moreInfo ())}>Ver más</button> */}
           <div className="aditional-info">
           <p>Genero {this.props.genre}</p>
             <p>Rating {this.props.vote_average}</p>
@@ -27,7 +28,7 @@ render (){
          
          
           
-          <a href="#">Ver más</a>
+          
           </article>
    
     </React.Fragment>

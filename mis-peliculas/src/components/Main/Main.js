@@ -8,7 +8,7 @@ class Main extends Component {
     this.state = {
       movies: [],
       genre : [],
-      nextUrl: '',
+   //   nextUrl: '',
     };
 
   }
@@ -19,7 +19,7 @@ componentDidMount(){
     this.setState({
       movies:movies.results,
       loaded: true,
-      nextUrl: movies.info.next,
+     // nextUrl: movies.info.,
 
     })
     console.log(movies);
@@ -37,21 +37,21 @@ componentDidMount(){
 }
 
 
-addMore () {
-  let url = this.state.nextUrl
-  fetch(url)
-  .then(response => response.json())
-  .then(movies => {
-    this.setState({
-     nextUrl: movies.info.next,
-     movies: this.state.movies.concat(movies.results)
+// addMore () {
+//   let url = this.state.
+//   fetch(url)
+//   .then(response => response.json())
+//   .then(movies => {
+//     this.setState({
+//      nextUrl: movies.info.,
+//      movies: this.state.movies.concat(movies.results)
 
-    })
-    console.log(movies);
+//     })
+//     console.log(movies);
   
-  }  )
+  
 
-}
+
 
 
 
