@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
-//import Card  from "../Card/Card";
+import Filter from "../Filter/Filter"
 
 class Main extends Component {
   constructor(props) {
@@ -59,14 +59,21 @@ class Main extends Component {
         movies: moviesLeft
     })
  
-  }    
+  } 
+  buscador(moviess) {
+    let moviesFiltradas = this.state.movies.filter(movies => movies.name.toLowerCase().includes(moviess.toLowerCase()))
+
+    this.setState({
+      movies: moviesFiltradas
+    })
+  }   
 
   render = () => {
     //poner loader
     return (
       <React.Fragment>
-        <div>
-          <h3>Buscador</h3>
+        <div className="row card-container">
+          <Filter filtrar={(texto)=>this.buscador(texto) }/>
         </div>
         <div>
           <h3>Filtros</h3>
@@ -106,7 +113,7 @@ class Main extends Component {
                   );
                 })}
               </main>
-            {/* </React.Fragment> */}
+           
           </section>
           <button type="button" onClick={() => this.addMore()}>
             Ver más
