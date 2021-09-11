@@ -50,6 +50,15 @@ class Main extends Component {
       });
   }
 
+  remove = (id) => {
+    console.log(id);
+    let moviesLeft = this.state.movies.filter( movies => movies.id !== id);
+    this.setState({
+        movies: moviesLeft
+    })
+ 
+  }    
+
   render = () => {
     //poner loader
     return (
@@ -89,6 +98,7 @@ class Main extends Component {
                       adult={movies.adult}
                       poster_path={movies.poster_path}
                       key={idx}
+                      remove={this.remove}
                       id={movies.id}
                     />
                   );

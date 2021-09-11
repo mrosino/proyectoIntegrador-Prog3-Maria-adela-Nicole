@@ -1,12 +1,7 @@
 import React, {Component} from "react";
 
 class Card extends Component{
-  remove(id) {
-    let moviesLeft = this.state.movies.filter( movies => movies.id !== id);
-    this.setState({
-        movies: moviesLeft
-    })
-  }       
+   
 
 
 render (){ 
@@ -27,7 +22,7 @@ render (){
             <p>Rating {this.props.vote_average}</p>
            
             <p>{this.props.adult === false ? "ATP": "No ATP"}  </p>
-            <button onClick={() => this.remove(this.props.id)}>Borrar</button>
+            <button onClick={() => this.props.remove(this.props.id)}>Borrar</button>
           
           </div>     
           
