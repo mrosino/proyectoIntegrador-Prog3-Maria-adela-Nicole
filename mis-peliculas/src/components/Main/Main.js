@@ -8,21 +8,22 @@ class Main extends Component {
     this.state = {
       movies: [],
       genre: [],
-      page: 1,
-     
+      page: 2,
+
     };
 
   }
   componentDidMount() {
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`)
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=1`)
       .then(response => response.json())
       .then(movies => {
         this.setState({
           movies: movies.results,
-          loaded: true,          
+          loaded: true,    
+         
 
         })
-        console.log(movies);
+      
 
       })
 
@@ -40,29 +41,32 @@ class Main extends Component {
 
    
 
+    addMore() {
+      let url = "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page="+ this.state.page;
 
-
-  addMore() {
-    let url = `https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`
-      fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log(this.state.page);
-        this.setState({
-          page: this.state.page +1,
-          movies: this.state.movies.concat(data.results)
-
-        })
-      })
-    }
-    seeLess() {
-      let url = `https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`
+    
         fetch(url)
         .then(response => response.json())
         .then(data => {
           console.log(this.state.page);
           this.setState({
-            page: this.state.page -1,
+            page: this.state.page+1,
+            movies: this.state.movies.concat(data.results)
+           
+  
+          })
+        })
+      }
+
+
+    seeLess() {
+      let url = "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page="+ this.state.page;
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(this.state.page);
+          this.setState({
+            page: this.state.page - 1,
             movies: this.state.movies.concat(data.results)
           
           })
@@ -94,7 +98,7 @@ class Main extends Component {
                   <Cards movies={this.state.movies} />
                 </section>
                 <button type="button" onClick={ ()=>this.addMore()}>Ver más</button>
-                <button type="button" onClick={ ()=>this.seeLess()}>Ver menos</button>
+              
              
               </main>
             </React.Fragment>
