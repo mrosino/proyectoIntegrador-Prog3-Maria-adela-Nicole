@@ -50,20 +50,7 @@ class Main extends Component {
       });
   }
 
-  seeLess() {
-    let url =
-      "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=" +
-      this.state.page;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(this.state.page);
-        this.setState({
-          page: this.state.page - 1,
-          movies: this.state.movies.concat(data.results),
-        });
-      });
-  }
+
 
   render = () => {
     //poner loader
@@ -85,7 +72,8 @@ class Main extends Component {
         </div>
         <main>
           <section className="card-container">
-            <Cards movies={this.state.movies} />
+            <Cards movies={this.state.movies} remove={(id)=>this.remove(id)} />
+           
           </section>
           <button type="button" onClick={() => this.addMore()}>
             Ver más

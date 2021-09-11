@@ -15,10 +15,12 @@ function Cards (props){
         </section>
         <main>
           {props.movies.map ((movies,idx) => {
-            return  < Card title={movies.title} overview ={movies.overview} genre = {movies.genre} vote_average= {movies.vote_average} adult={movies.adult} poster_path= {movies.poster_path} key= {idx} />
-          })}
+            return  < Card title={movies.title} overview ={movies.overview} genre = {movies.genre} vote_average= {movies.vote_average} adult={movies.adult} poster_path= {movies.poster_path} key= {idx} id={movies.id}  />
+            
           
-
+          })}
+  
+ 
         </main>
     
     </React.Fragment>
