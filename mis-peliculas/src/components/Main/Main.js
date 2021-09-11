@@ -20,6 +20,7 @@ class Main extends Component {
         this.setState({
           movies: movies.results,
           loaded: true,
+      
         });
       });
   }
@@ -46,6 +47,7 @@ class Main extends Component {
         this.setState({
           page: this.state.page + 1,
           movies: this.state.movies.concat(data.results),
+        
         });
       });
   }
