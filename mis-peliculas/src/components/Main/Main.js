@@ -8,18 +8,18 @@ class Main extends Component {
     this.state = {
       movies: [],
       genre: [],
+      page: 1,
      
     };
 
   }
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=1")
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`)
       .then(response => response.json())
       .then(movies => {
         this.setState({
           movies: movies.results,
-          loaded: true,
-          
+          loaded: true,          
 
         })
         console.log(movies);
@@ -43,27 +43,40 @@ class Main extends Component {
 
 
   addMore() {
-    let url = "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=" + this.state.page + 1
+    let url = `https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`
       fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        console.log(this.state.page);
         this.setState({
-          id:this.state.page +1,
+          page: this.state.page +1,
           movies: this.state.movies.concat(data.results)
 
         })
       })
-
-
     }
-
+    seeLess() {
+      let url = `https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page${this.state.page}`
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(this.state.page);
+          this.setState({
+            page: this.state.page -1,
+            movies: this.state.movies.concat(data.results)
+          
+          })
+          
+        })
+        
+      }
 
 
 
         render = () => {
           //poner loader
           return (
+            
             <React.Fragment>
               <div>
                 <h3>Buscador</h3>
@@ -76,10 +89,13 @@ class Main extends Component {
                 </div>
               </div>
               <main>
-                <button type="button" onClick={ ()=>this.addMore()}>Cargar más tarjetas</button>
+               
                 <section className="card-container">
                   <Cards movies={this.state.movies} />
                 </section>
+                <button type="button" onClick={ ()=>this.addMore()}>Ver más</button>
+                <button type="button" onClick={ ()=>this.seeLess()}>Ver menos</button>
+             
               </main>
             </React.Fragment>
           );
