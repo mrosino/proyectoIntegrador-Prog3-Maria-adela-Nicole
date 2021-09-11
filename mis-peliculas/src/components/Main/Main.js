@@ -61,7 +61,7 @@ class Main extends Component {
  
   } 
   buscador(moviess) {
-    let moviesFiltradas = this.state.movies.filter(movies => movies.name.toLowerCase().includes(moviess.toLowerCase()))
+    let moviesFiltradas = this.state.movies.filter( movies => movies.title.toLowerCase().includes(moviess.toLowerCase()))
 
     this.setState({
       movies: moviesFiltradas
