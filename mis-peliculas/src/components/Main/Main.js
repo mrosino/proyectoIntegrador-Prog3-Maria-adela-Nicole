@@ -13,7 +13,7 @@ class Main extends Component {
 
   }
   componentDidMount() {
-    fetch("https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=1"+ this.state.page + 1)
+    fetch("https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=1"
       .then(response => response.json())
       .then(movies => {
         this.setState({
@@ -24,22 +24,24 @@ class Main extends Component {
         })
         console.log(movies);
 
-      })
+      }),
+
     // fetch("https://api.themoviedb.org/3/genre/movie/list?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US")
     //   .then(response => response.json())
     //   .then(genre => {
     //     this.setState({
     //       genre: genre.results
     //     })
+
     //     console.log(genre);
     //   })
 
-  }
+    }
 
 
 
   addMore() {
-    let url = this.state.page + 1;
+    let url = "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=" + this.state.page + 1
       fetch(url)
       .then(response => response.json())
       .then(data => {
