@@ -6,8 +6,7 @@ return (
     <img src="../img/logoSMA.png" alt="" />
     <section>
         <div>
-            <p>Más Populares </p>
-            <p>Mejores Puntuadas</p>
+           
         </div>
     </section>
     </header>
