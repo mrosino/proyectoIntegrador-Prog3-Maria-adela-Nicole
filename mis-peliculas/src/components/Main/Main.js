@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Cards from "../Cards/Cards";
+import Card from "../Card/Card";
 //import Card  from "../Card/Card";
 
 class Main extends Component {
@@ -50,8 +50,6 @@ class Main extends Component {
       });
   }
 
-
-
   render = () => {
     //poner loader
     return (
@@ -72,8 +70,31 @@ class Main extends Component {
         </div>
         <main>
           <section className="card-container">
-            <Cards movies={this.state.movies} remove={(id)=>this.remove(id)} />
-           
+          
+              <section className="navigation">
+                <div>
+                  <i className="fas fa-chevron-left"></i>
+                  <i className="fas fa-chevron-right"></i>
+                </div>
+                <i className="far fa-window-close"></i>
+              </section>
+              <main>
+                {this.state.movies.map((movies, idx) => {
+                  return (
+                    <Card
+                      title={movies.title}
+                      overview={movies.overview}
+                      genre={movies.genre}
+                      vote_average={movies.vote_average}
+                      adult={movies.adult}
+                      poster_path={movies.poster_path}
+                      key={idx}
+                      id={movies.id}
+                    />
+                  );
+                })}
+              </main>
+            {/* </React.Fragment> */}
           </section>
           <button type="button" onClick={() => this.addMore()}>
             Ver más
