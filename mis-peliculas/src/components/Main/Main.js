@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from "../Card/Card";
 import Filter from "../Filter/Filter"
 
+
 class Main extends Component {
   constructor(props) {
     super(props);
@@ -9,6 +10,7 @@ class Main extends Component {
       movies: [],
       genre: [],
       page: 2,
+      inicialMovies: [],
     };
   }
   componentDidMount() {
@@ -20,6 +22,7 @@ class Main extends Component {
         this.setState({
           movies: movies.results,
           loaded: true,
+          inicialMovies: movies.results,
       
         });
       });
@@ -47,6 +50,7 @@ class Main extends Component {
         this.setState({
           page: this.state.page + 1,
           movies: this.state.movies.concat(data.results),
+          inicialMovies: this.state.inicialMovies.concat(data.results),
         
         });
       });
@@ -60,11 +64,10 @@ class Main extends Component {
     })
  
   } 
-  buscador(moviess) {
-    let moviesFiltradas = this.state.movies.filter( movies => movies.title.toLowerCase().includes(moviess.toLowerCase()))
-
+  filtered(search) {
+    let filteredMovies = this.state.inicialMovies.filter( movies => movies.title.toLowerCase().includes(search.toLowerCase()))
     this.setState({
-      movies: moviesFiltradas
+      movies: filteredMovies
     })
   }   
 
@@ -73,7 +76,7 @@ class Main extends Component {
     return (
       <React.Fragment>
         <div className="row card-container">
-          <Filter filtrar={(texto)=>this.buscador(texto) }/>
+          <Filter search={(text)=>this.filtered(text) }/>
         </div>
         <div>
           <h3>Filtros</h3>

@@ -1,32 +1,38 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
 
-class Filter extends Component{
-    constructor(){
-        super();
-        this.state = {
-            filterBy:''
-        }
-    }
+class Filter extends Component {
+  constructor() {
+    super();
+    this.state = {
+      value: "",
+    };
+  }
 
-    evitarDefault(evento){
-        evento.preventDefault();
-        
-    }
+  notAuto(event) {
+    event.preventDefault();
+  }
 
-    controlarCambios(event){
-        this.setState({
-            filterBy: event.target.value
-        }, () => this.props.filtrar(this.state.filterBy));
-    }
+  changeControl(event) {
+    this.setState(
+      {
+        value: event.target.value, 
+      },
+      () => this.props.search(this.state.value)
+    );
+  }
 
-    render(){
-        return(
-            <form action="" onSubmit={ (movies) => this.evitarDefault(movies) }>
-                <input type="text" onChange={(movies)=> this.controlarCambios(movies) } value={this.state.filterBy} placeholder="Buscar..."/>
-            </form>
-        )
-    }
-
+  render() {
+    return (
+      <form onSubmit={(eventSubmit) => this.notAuto(eventSubmit)}>
+        <input
+          type="text"
+          onChange={(event)=>this.changeControl(event)}
+          value={this.state.value}
+          placeholder="Buscar..."
+        />
+      </form>
+    );
+  }
 }
 
 export default Filter;
