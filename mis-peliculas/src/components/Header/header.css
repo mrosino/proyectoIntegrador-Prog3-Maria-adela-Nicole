@@ -1,0 +1,17 @@
+.img{
+z-index: 0;
+width: 60%;
+}
+.logo{
+    width: 10%;
+    margin-top: 10px;
+}
+
+.header{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin-left: 100px;
+margin-right: 100px;
+}

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Filter from "../Filter/Filter"
+import './header.css';
 
 
 class Header extends Component {
@@ -25,8 +26,11 @@ class Header extends Component {
 return (
     < React.Fragment>
     <header>
-    <img src="../img/logoSMA.png" alt="" />
-    <section>
+    <section className="header">
+      <div className="logo">
+    <img className="img" src="./img/logoSMA.jpg" alt="logo" />
+    </div>
+   
         <div>
         <div className="row card-container">
           <Filter search={(text)=>this.filtered(text) }/>

@@ -35,7 +35,7 @@ render (){
          
           <img className="imagen" src= {"https://image.tmdb.org/t/p/w342/" + this.props.poster_path} alt="" />
           <div> 
-          <p className="description"> Descripcion: {this.props.overview}</p>
+          <p className="description"> Description: {this.props.overview}</p>
           </div>
      
           <section className="aditional-info">
