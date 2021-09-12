@@ -1,27 +1,28 @@
 import React, {Component} from "react";
+import './card.css';
 
 class Card extends Component{
   constructor(props) {
     super(props);
     this.state = {
       more: false,
-      text: "Ver más"
+      phrase: 'Ver más'
     };
   }
   more() {
     if (this.state.more) {
       this.setState({
-        more: false,
-        text: "Ver más"
-      })
-      
-    }else {
+        more:false,
+        phrase: "Ver más",
+       
+      });
+    } else {
       this.setState({
-          viewMore: true,
-          text: 'Ver menos'
-      })            
-  }
-
+        more: true,
+        phrase: "Ver menos",
+      
+      });
+    }
   }
 
 render (){ 
@@ -36,12 +37,15 @@ render (){
           <div> 
           <p className="description"> Descripcion: {this.props.overview}</p>
           </div>
-          {/* <button onClick = {( => this.props.moreInfo ())}>Ver más</button> */}
+     
           <section className="aditional-info">
-          <h2 className='more' onClick={()=>this.more()}>{this.state.text}</h2>
-            <p>Genero {this.props.genre}</p>
-            <p>Rating {this.props.vote_average}</p>
-            <p>{this.props.adult === false ? "ATP": "No ATP"}  </p>
+       
+          <button className='more' onClick={()=>this.more()}>{this.state.phrase}</button>
+   
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> Rating {this.props.vote_average}</p>  
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> ATP {this.props.adult}</p>  
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> Genre {this.props.genre}</p>  
+        
             </section>
           </article>
    
