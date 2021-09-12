@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import Filter from "../Filter/Filter"
-
+import Header from "../Header/Header"
 
 class Main extends Component {
   constructor(props) {
@@ -75,6 +75,7 @@ class Main extends Component {
     //poner loader
     return (
       <React.Fragment>
+        <Header />
         <div className="row card-container">
           <Filter search={(text)=>this.filtered(text) }/>
         </div>

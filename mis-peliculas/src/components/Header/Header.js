@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-
 import Filter from "../Filter/Filter"
 
 
@@ -29,7 +28,9 @@ return (
     <img src="../img/logoSMA.png" alt="" />
     <section>
         <div>
-        <Filter search={(text)=>this.filtered(text) }/>
+        <div className="row card-container">
+          <Filter search={(text)=>this.filtered(text) }/>
+        </div>
            
         </div>
     </section>
