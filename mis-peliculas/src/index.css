@@ -33,7 +33,7 @@ header {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375b6d",endColorstr="#223843",GradientType=1);
   height: 100px;
 }
-main {
+.main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -51,13 +51,29 @@ main {
   padding: 10px;
 }
 
-img.imagen {
+.imagen {
   width: 100%;
 }
 .card-container {
   display: flex;
-
   margin-top: auto;
-
   align-items: center;
+}
+.main1 {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  align-items: center;
+
+}
+.card1{ 
+  width: 70%;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #d8b4a0;
+  text-align: center;
+  padding: 10px;
 }

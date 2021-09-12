@@ -11,7 +11,8 @@ class Main extends Component {
       page: 2,
       inicialMovies: [],
       text:[],
-      more: false,
+      display:false,
+      loaded:false,
     };
   }
   componentDidMount() {
@@ -60,6 +61,18 @@ class Main extends Component {
       movies: filteredMovies,
     });
   }
+  display(){
+    if (this.state.display) {
+      this.setState({
+        display:false,
+      });
+    } else {
+      this.setState({
+        display: true,
+      });
+    }
+    console.log(this.state.display);
+  }
 
   
   render = () => {
@@ -71,7 +84,11 @@ class Main extends Component {
           <Filter search={(text) => this.filtered(text)} />
         </div>
         <div>
-          <h3>Filtros</h3>
+        <button type="button" onClick={() => this.display()}>
+            Change layout
+          </button>
+          
+          {/* <h3>Filtros</h3>
           <div className="container-filtros">
             <button className="button-1" onClick={this.state.orderByNombre}>
               Ordenar por Nombre
@@ -79,9 +96,10 @@ class Main extends Component {
             <button className="button-1" onClick={this.state.orderByRating}>
               Ordenar por Rating
             </button>
-          </div>
+          </div> */}
         </div>
-        <main>
+        <main >
+        
           <section className="card-container">
             <section className="navigation">
               <div>
@@ -90,8 +108,9 @@ class Main extends Component {
               </div>
               <i className="far fa-window-close"></i>
             </section>
-            <main>
-              {this.state.movies.map((movies, idx) => {
+            <main className={`${this.state.display ? 'main' : 'main1'}`}>
+              {this.state.loaded ?
+              this.state.movies.map((movies, idx) => {
                 return (
                   <Card
                     title={movies.title}
@@ -103,11 +122,15 @@ class Main extends Component {
                     key={idx}
                     remove={this.remove}
                     id={movies.id}
-                    more={this.more}
                     text={this.state.text}
+                    display= {this.state.display}
                   />
                 );
-              })}
+              })
+              :
+              <p>Loading...</p>
+            }
+
             </main>
           </section>
           <button type="button" onClick={() => this.addMore()}>

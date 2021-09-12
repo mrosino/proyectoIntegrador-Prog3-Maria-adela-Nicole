@@ -29,7 +29,7 @@ render (){
 
   return (
     <React.Fragment>
-      <article className="card">
+      <article className={`${this.props.display ? 'card' : 'card1'}`}>
       <button onClick={() => this.props.remove(this.props.id)}>Borrar</button>
           <h3>{this.props.title}</h3>
          
