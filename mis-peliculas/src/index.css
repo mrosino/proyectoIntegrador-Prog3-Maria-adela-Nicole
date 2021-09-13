@@ -90,7 +90,7 @@ h3 {
 .description {
   align-self: flex-end;
   height: 30%;
-
+  align-items: center;
 }
 
 .additional-info {
