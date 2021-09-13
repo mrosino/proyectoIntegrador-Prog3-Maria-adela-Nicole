@@ -15,12 +15,12 @@ class Header extends Component {
     }
 
 
-    filtered(search) {
-        let filteredMovies = this.state.movies.filter( movies => movies.title.toLowerCase().includes(search.toLowerCase()))
-        this.setState({
-          movies: filteredMovies
-        })
-      }  
+    // filtered(search) {
+    //     let filteredMovies = this.state.movies.filter( movies => movies.title.toLowerCase().includes(search.toLowerCase()))
+    //     this.setState({
+    //       movies: filteredMovies
+    //     })
+    //   }  
 
     render = () => {
 return (
