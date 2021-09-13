@@ -28,7 +28,7 @@ class Header extends Component {
             
 
             <button type="button" onClick={() => this.props.display()}>
-            {this.props.display.logo === 'list'  ?  <BiDotsVertical /> : <BiListUl />}
+            {this.props.change  ?  <BiDotsVertical /> : <BiListUl />}
           
             </button>
           </section>

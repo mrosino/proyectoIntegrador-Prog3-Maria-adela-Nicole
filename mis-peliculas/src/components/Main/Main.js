@@ -10,7 +10,7 @@ class Main extends Component {
       page: 2,
       inicialMovies: [],
       text: [],
-      display: false,
+      change: false,
       loaded: false,
       
     };
@@ -61,13 +61,13 @@ class Main extends Component {
     });
   }
   display() {
-    if (this.state.display) {
+    if (this.state.change) {
       this.setState({
-        display: false,
+        change: false,
       });
     } else {
       this.setState({
-        display: true,
+        change: true,
       });
     }
   }
@@ -79,6 +79,7 @@ class Main extends Component {
         <Header
           filter={(search) => this.filtered(search)}
           display={() => this.display()}
+          change={this.state.change}
         />
 
         <div>
@@ -101,7 +102,7 @@ class Main extends Component {
               </div>
               <i className="far fa-window-close"></i>
             </section>
-            <main className={`${this.state.display ? "main" : "main1"}`}>
+            <main className={`${this.state.change ? "main" : "main1"}`}>
               {this.state.loaded ? (
                 this.state.movies.map((movies, idx) => {
                   return (
@@ -110,7 +111,7 @@ class Main extends Component {
                       key={idx}
                       remove={this.remove}
                       text={this.state.text}
-                      display={this.state.display}
+                      display={this.state.change}
                     />
                   );
                 })
