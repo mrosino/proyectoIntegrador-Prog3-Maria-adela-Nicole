@@ -1,9 +1,8 @@
-import './App.css';
+import "./App.css";
 import React from "react";
 
 import Main from "./components/Main/Main";
 import Footer from "./components/Footer/Footer";
-
 
 function App() {
   return (
@@ -11,8 +10,7 @@ function App() {
       <Main />
       <Footer />
     </React.Fragment>
-  )
+  );
 }
-
 
 export default App;

@@ -15,7 +15,7 @@ class Filter extends Component {
   changeControl(event) {
     this.setState(
       {
-        value: event.target.value, 
+        value: event.target.value,
       },
       () => this.props.filter(this.state.value)
     );
@@ -27,7 +27,7 @@ class Filter extends Component {
       <form onSubmit={(eventSubmit) => this.notAuto(eventSubmit)}>
         <input
           type="text"
-          onChange={(event)=>this.changeControl(event)}
+          onChange={(event) => this.changeControl(event)}
           value={this.state.value}
           placeholder="Buscar..."
         />

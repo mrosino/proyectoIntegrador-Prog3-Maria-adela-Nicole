@@ -14,7 +14,6 @@ class Header extends Component {
   }
 
   render = () => {
-  
     return (
       <React.Fragment>
         <header>
@@ -26,11 +25,11 @@ class Header extends Component {
             <div>
               <div className="row card-container">
                 <Filter filter={this.props.filter} />
-            </div>
+              </div>
             </div>
             <button type="button" onClick={() => this.props.display()}>
-            Change layout
-          </button>
+              Change layout
+            </button>
           </section>
         </header>
         {/* <header>

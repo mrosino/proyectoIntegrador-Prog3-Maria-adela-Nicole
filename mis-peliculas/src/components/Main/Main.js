@@ -10,9 +10,9 @@ class Main extends Component {
       movies: [],
       page: 2,
       inicialMovies: [],
-      text:[],
-      display:false,
-      loaded:false,
+      text: [],
+      display: false,
+      loaded: false,
     };
   }
   componentDidMount() {
@@ -37,7 +37,6 @@ class Main extends Component {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-       
         this.setState({
           page: this.state.page + 1,
           movies: this.state.movies.concat(data.results),
@@ -47,13 +46,12 @@ class Main extends Component {
   }
 
   remove = (id) => {
- 
     let moviesLeft = this.state.movies.filter((movies) => movies.id !== id);
     this.setState({
       movies: moviesLeft,
     });
   };
-  
+
   filtered(search) {
     let filteredMovies = this.state.inicialMovies.filter((movies) =>
       movies.title.toLowerCase().includes(search.toLowerCase())
@@ -62,32 +60,28 @@ class Main extends Component {
       movies: filteredMovies,
     });
   }
-  display(){
+  display() {
     if (this.state.display) {
       this.setState({
-        display:false,
+        display: false,
       });
     } else {
       this.setState({
         display: true,
       });
     }
-  
   }
 
-  
   render = () => {
     //poner loader
     return (
       <React.Fragment>
- 
-      <Header filter={(search) => this.filtered(search)} display={() => this.display()}/>
-            
-     
-     
+        <Header
+          filter={(search) => this.filtered(search)}
+          display={() => this.display()}
+        />
+
         <div>
-       
-          
           {/* <h3>Filtros</h3>
           <div className="container-filtros">
             <button className="button-1" onClick={this.state.orderByNombre}>
@@ -98,8 +92,7 @@ class Main extends Component {
             </button>
           </div> */}
         </div>
-        <main >
-        
+        <main>
           <section className="card-container">
             <section className="navigation">
               <div>
@@ -108,23 +101,22 @@ class Main extends Component {
               </div>
               <i className="far fa-window-close"></i>
             </section>
-            <main className={`${this.state.display ? 'main' : 'main1'}`}>
-              {this.state.loaded ?
-              this.state.movies.map((movies, idx) => {
-                return (
-                  <Card
-                    movies={movies}
-                    key={idx}
-                    remove={this.remove}
-                    text={this.state.text}
-                    display= {this.state.display}
-                  />
-                );
-              })
-              :
-              <p>Loading...</p>
-            }
-
+            <main className={`${this.state.display ? "main" : "main1"}`}>
+              {this.state.loaded ? (
+                this.state.movies.map((movies, idx) => {
+                  return (
+                    <Card
+                      movies={movies}
+                      key={idx}
+                      remove={this.remove}
+                      text={this.state.text}
+                      display={this.state.display}
+                    />
+                  );
+                })
+              ) : (
+                <p>Loading...</p>
+              )}
             </main>
           </section>
           <button type="button" onClick={() => this.addMore()}>
