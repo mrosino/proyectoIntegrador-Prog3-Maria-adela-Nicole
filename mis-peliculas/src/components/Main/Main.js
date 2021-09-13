@@ -37,7 +37,7 @@ class Main extends Component {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        console.log(this.state.page);
+       
         this.setState({
           page: this.state.page + 1,
           movies: this.state.movies.concat(data.results),
@@ -47,7 +47,7 @@ class Main extends Component {
   }
 
   remove = (id) => {
-    console.log(id);
+ 
     let moviesLeft = this.state.movies.filter((movies) => movies.id !== id);
     this.setState({
       movies: moviesLeft,
@@ -72,7 +72,7 @@ class Main extends Component {
         display: true,
       });
     }
-    console.log(this.state.display);
+  
   }
 
   
@@ -80,14 +80,13 @@ class Main extends Component {
     //poner loader
     return (
       <React.Fragment>
-        <Header />
-        <div className="row card-container">
-          <Filter search={(text) => this.filtered(text)} />
-        </div>
+ 
+      <Header filter={(search) => this.filtered(search)} display={() => this.display()}/>
+            
+     
+     
         <div>
-        <button type="button" onClick={() => this.display()}>
-            Change layout
-          </button>
+       
           
           {/* <h3>Filtros</h3>
           <div className="container-filtros">
@@ -114,15 +113,9 @@ class Main extends Component {
               this.state.movies.map((movies, idx) => {
                 return (
                   <Card
-                    title={movies.title}
-                    overview={movies.overview}
-                    genre={movies.genre}
-                    vote_average={movies.vote_average}
-                    adult={movies.adult}
-                    poster_path={movies.poster_path}
+                    movies={movies}
                     key={idx}
                     remove={this.remove}
-                    id={movies.id}
                     text={this.state.text}
                     display= {this.state.display}
                   />

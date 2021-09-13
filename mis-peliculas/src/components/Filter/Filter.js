@@ -17,11 +17,12 @@ class Filter extends Component {
       {
         value: event.target.value, 
       },
-      () => this.props.search(this.state.value)
+      () => this.props.filter(this.state.value)
     );
   }
 
   render() {
+    console.log(this.props);
     return (
       <form onSubmit={(eventSubmit) => this.notAuto(eventSubmit)}>
         <input

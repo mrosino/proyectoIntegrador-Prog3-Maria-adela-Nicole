@@ -30,21 +30,21 @@ render (){
   return (
     <React.Fragment>
       <article className={`${this.props.display ? 'card' : 'card1'}`}>
-      <button onClick={() => this.props.remove(this.props.id)}>Borrar</button>
-          <h3>{this.props.title}</h3>
+      <button onClick={() => this.props.remove(this.props.movies.id)}>Borrar</button>
+          <h3>{this.props.movies.title}</h3>
          
-          <img className="imagen" src= {"https://image.tmdb.org/t/p/w342/" + this.props.poster_path} alt="" />
+          <img className="imagen" src= {"https://image.tmdb.org/t/p/w342/" + this.props.movies.poster_path} alt="" />
           <div> 
-          <p className="description"> Description: {this.props.overview}</p>
+          <p className="description"> Description: {this.props.movies.overview}</p>
           </div>
      
           <section className="aditional-info">
        
           <button className='more' onClick={()=>this.more()}>{this.state.phrase}</button>
    
-          <p className={`${this.state.more ? 'show' : 'hide'}`}> Rating {this.props.vote_average}</p>  
-          <p className={`${this.state.more ? 'show' : 'hide'}`}> ATP {this.props.adult}</p>  
-          <p className={`${this.state.more ? 'show' : 'hide'}`}> Genre {this.props.genre}</p>  
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> Rating {this.props.movies.vote_average}</p>  
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> ATP {this.props.movies.adult}</p>  
+          <p className={`${this.state.more ? 'show' : 'hide'}`}> Genre {this.props.movies.genre}</p>  
         
             </section>
           </article>
