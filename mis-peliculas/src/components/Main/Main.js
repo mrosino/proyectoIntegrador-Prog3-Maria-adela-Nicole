@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
-import Filter from "../Filter/Filter";
 import Header from "../Header/Header";
 
 class Main extends Component {
@@ -13,6 +12,7 @@ class Main extends Component {
       text: [],
       display: false,
       loaded: false,
+      
     };
   }
   componentDidMount() {

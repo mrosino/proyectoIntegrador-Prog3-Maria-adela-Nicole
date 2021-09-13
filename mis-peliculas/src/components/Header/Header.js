@@ -1,15 +1,13 @@
 import React, { Component } from "react";
 import Filter from "../Filter/Filter";
 import "./header.css";
+import { BiListUl, BiDotsVertical } from "react-icons/bi";
 
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [],
-      inicialMovies: [],
-      genre: [],
-      page: 2,
+      button: "Change layout",
     };
   }
 
@@ -27,8 +25,11 @@ class Header extends Component {
                 <Filter filter={this.props.filter} />
               </div>
             </div>
+            
+
             <button type="button" onClick={() => this.props.display()}>
-              Change layout
+            {this.props.display.logo === 'list'  ?  <BiDotsVertical /> : <BiListUl />}
+          
             </button>
           </section>
         </header>
