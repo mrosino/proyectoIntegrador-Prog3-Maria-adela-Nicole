@@ -53,6 +53,7 @@ class Main extends Component {
       movies: moviesLeft,
     });
   };
+  
   filtered(search) {
     let filteredMovies = this.state.inicialMovies.filter((movies) =>
       movies.title.toLowerCase().includes(search.toLowerCase())
