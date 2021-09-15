@@ -120,7 +120,7 @@ class Main extends Component {
               )}
             </main>
           </section>
-          <button type="button" onClick={() => this.addMore()}>
+          <button className="button1" type="button" onClick={() => this.addMore()}>
             Ver más
           </button>
         </main>

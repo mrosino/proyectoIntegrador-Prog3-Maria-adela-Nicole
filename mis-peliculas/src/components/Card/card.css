@@ -4,3 +4,12 @@
 .show{
     display: block;
 }
+.imagen{
+    width: 70%;
+    
+}
+.button{
+    background-color: #cf3b77;
+    width: 40%;
+    border-radius: 10px;
+}

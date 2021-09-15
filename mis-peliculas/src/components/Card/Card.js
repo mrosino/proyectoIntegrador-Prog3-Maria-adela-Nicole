@@ -27,10 +27,10 @@ class Card extends Component {
     return (
       <React.Fragment>
         <article className={`${this.props.display ? "card" : "card1"}`}>
-          <button onClick={() => this.props.remove(this.props.movies.id)}>
+          <button className="button"  onClick={() => this.props.remove(this.props.movies.id)}>
             Borrar
           </button>
-          <button className="more" onClick={() => this.more()}>
+          <button className="button" onClick={() => this.more()}>
               {this.state.phrase}
             </button>
           <h3>{this.props.movies.title}</h3>

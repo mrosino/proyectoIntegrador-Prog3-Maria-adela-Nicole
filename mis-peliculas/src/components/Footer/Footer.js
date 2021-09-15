@@ -1,9 +1,12 @@
 import React from 'react';
+import "./Footer.css";
 
 function Footer() {
     return (
         <footer>
-            <p>Maria Virginia Rosino - Adela Buye - Nicole Brooks</p>
+            <section className="footer"> 
+            <p className="nombres">Maria Virginia Rosino - Adela Buye - Nicole Brooks</p>
+            </section>
         </footer>
     );
 }
