@@ -26,8 +26,24 @@ class Main extends Component {
           loaded: true,
           inicialMovies: movies.results,
         });
+
+        console.log(movies);
       });
+
+      fetch(
+        'https://api.themoviedb.org/3/genre/movie/list?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US'
+      )
+      .then((response) => response.json())
+      .then((genre) => {
+        this.setState ({
+          genre: genre.results
+        })
+
+        
+
+      })
   }
+
 
   addMore() {
     let url =

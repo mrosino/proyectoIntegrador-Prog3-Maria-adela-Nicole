@@ -62,7 +62,11 @@ class Card extends Component {
             </p>
             <p className={`${this.state.more ? "show" : "hide"}`}>
               {" "}
-              Genre {this.props.movies.genre}
+              Release Date: {this.props.movies.release_date}
+            </p>
+            <p className={`${this.state.more ? "show" : "hide"}`}>
+              {" "}
+              Popularity: {this.props.movies.popularity}
             </p>
           </section>
         </article>
