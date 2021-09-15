@@ -9,7 +9,26 @@
     
 }
 .button{
-    background-color: #cf3b77;
+    background-color:#d2b1b1;
     width: 40%;
     border-radius: 10px;
 }
+.card1{ 
+    width: 90%;
+    height: 10%;
+    margin: 15px;
+    border-radius: 8px;
+    background-color: #d8b4a0c8;
+    text-align: center;
+    padding: 30px;
+
+   
+  }
+  .card {
+    width: 20%;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: #d8b4a0c8;
+    text-align: center;
+    padding: 10px;
+  }
