@@ -75,7 +75,7 @@ class Card extends Component {
               <a href="#close" title="Close" className="close">
                 X
               </a>
-              <h2>Movie description </h2>
+              <h2>{this.props.movies.title} </h2>
               <p className="description">{this.props.movies.overview}</p>
             </div>
           </div>
