@@ -1,0 +1,13 @@
+.filter{
+    width: 200%;
+    border-radius: 10px;
+    background-color: #dabebe;
+}
+.button {
+    background-color: #dabebe;
+    width: 60%;
+    border-radius: 10px;
+    margin: 15px;
+    width: fit-content;
+    padding: 7px;
+  }

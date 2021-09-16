@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Filter.css";
 
 class Filter extends Component {
   constructor() {
@@ -25,7 +26,7 @@ class Filter extends Component {
     console.log(this.props);
     return (
       <form onSubmit={(eventSubmit) => this.notAuto(eventSubmit)}>
-        <input
+        <input className="filter"
           type="text"
           onChange={(event) => this.changeControl(event)}
           value={this.state.value}

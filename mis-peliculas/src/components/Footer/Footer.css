@@ -10,4 +10,5 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b57d7d",endCo
 .nombres{
     justify-content: center;
     align-items: center;
+    margin-left: 2%;
 }
