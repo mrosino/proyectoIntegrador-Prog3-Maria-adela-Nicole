@@ -38,6 +38,8 @@ header {
   display: flex;
   margin-top: auto;
   align-items: center;
+  align-self: flex-start;
+
 }
 .main1 {
   display: flex;
@@ -51,14 +53,24 @@ header {
 }
 
 .button1{
-  background-color: #d8b4a0;
-  width: 20%;
-  border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40%;
-}
 
+  font-size: larger;
+  text-align: center;
+  background-color: #dabebe;
+  width: 20%;
+  padding: 10px;
+  border-radius: 10px;
+ 
+
+}
+.bottom{
+ 
+display: flex;
+justify-content: center;
+}
+.button1:hover{
+  background-color: rgba(0, 0, 0, 0.194);
+}
 h3 {
   align-self: center;
   padding: 10px;

@@ -6,19 +6,19 @@ class Card extends Component {
     super(props);
     this.state = {
       more: false,
-      phrase: "Ver más",
+      phrase: "See more",
     };
   }
   more() {
     if (this.state.more) {
       this.setState({
         more: false,
-        phrase: "Ver más",
+        phrase: "See more",
       });
     } else {
       this.setState({
         more: true,
-        phrase: "Ver menos",
+        phrase: "See less",
       });
     }
   }
@@ -27,13 +27,7 @@ class Card extends Component {
     return (
       <React.Fragment>
         <article className={`${this.props.display ? "card" : "card1"}`}>
-          <button className="button"  onClick={() => this.props.remove(this.props.movies.id)}>
-            Borrar
-          </button>
-          <button className="button" onClick={() => this.more()}>
-              {this.state.phrase}
-            </button>
-          <h3>{this.props.movies.title}</h3>
+          <h3 className="title">{this.props.movies.title}</h3>
 
           <img
             className="imagen"
@@ -42,18 +36,9 @@ class Card extends Component {
             }
             alt=""
           />
-          <div>
-            <p className="description">
-              {" "}
-              Description: {this.props.movies.overview}
-            </p>
-          </div>
 
           <section className="aditional-info">
-            
-
             <p className={`${this.state.more ? "show" : "hide"}`}>
-              {" "}
               Rating {this.props.movies.vote_average}
             </p>
             <p className={`${this.state.more ? "show" : "hide"}`}>
@@ -69,6 +54,31 @@ class Card extends Component {
               Popularity: {this.props.movies.popularity}
             </p>
           </section>
+          <div className="buttons">
+          <button
+            className="button"
+            onClick={() => this.props.remove(this.props.movies.id)}
+          >
+            Delete
+          </button>
+          <button className="button" onClick={() => this.more()}>
+            {this.state.phrase}
+          </button>
+          <div>
+            <a className="tap" href="#openModal">
+              <button className="button">Tap for description</button>
+            </a>
+          </div>
+          </div>
+          <div id="openModal" className="modalDialog">
+            <div>
+              <a href="#close" title="Close" className="close">
+                X
+              </a>
+              <h2>Movie description </h2>
+              <p className="description">{this.props.movies.overview}</p>
+            </div>
+          </div>
         </article>
       </React.Fragment>
     );

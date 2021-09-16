@@ -136,9 +136,11 @@ class Main extends Component {
               )}
             </main>
           </section>
+          <div className="bottom">
           <button className="button1" type="button" onClick={() => this.addMore()}>
-            Ver más
+           Load more
           </button>
+          </div>
         </main>
       </React.Fragment>
     );
