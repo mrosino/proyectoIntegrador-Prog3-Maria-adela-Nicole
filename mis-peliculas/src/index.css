@@ -5,10 +5,22 @@
 body {
   margin: 0;
   font-family: "Oxygen", "Roboto", sans-serif;
-  background: rgb(181,125,125);
-  background: -moz-linear-gradient(351deg, rgba(181,125,125,1) 0%, rgba(87,35,54,1) 100%);
-  background: -webkit-linear-gradient(351deg, rgba(181,125,125,1) 0%, rgba(87,35,54,1) 100%);
-  background: linear-gradient(351deg, rgba(181,125,125,1) 0%, rgba(87,35,54,1) 100%);
+  background: rgb(181, 125, 125);
+  background: -moz-linear-gradient(
+    351deg,
+    rgba(181, 125, 125, 1) 0%,
+    rgba(87, 35, 54, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    351deg,
+    rgba(181, 125, 125, 1) 0%,
+    rgba(87, 35, 54, 1) 100%
+  );
+  background: linear-gradient(
+    351deg,
+    rgba(181, 125, 125, 1) 0%,
+    rgba(87, 35, 54, 1) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b57d7d",endColorstr="#572336",GradientType=1);
 }
 
@@ -16,14 +28,10 @@ h1 {
   font-size: 24px;
 }
 header {
-  
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375b6d",endColorstr="#223843",GradientType=1);
   height: 100px;
 }
 .main {
- 
-
-
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
@@ -33,8 +41,6 @@ header {
   align-items: center;
 }
 
-
-
 .imagen {
   width: 100%;
 }
@@ -43,7 +49,6 @@ header {
   margin-top: auto;
   align-items: center;
   align-self: flex-start;
-
 }
 .main1 {
   display: flex;
@@ -52,26 +57,21 @@ header {
   padding: 10px;
   margin: 10px;
   width: 100%;
-
 }
 
-.button1{
-
+.button1 {
   font-size: larger;
   text-align: center;
   background-color: #dabebe;
   width: 20%;
   padding: 10px;
   border-radius: 10px;
- 
-
 }
-.bottom{
- 
-display: flex;
-justify-content: center;
+.bottom {
+  display: flex;
+  justify-content: center;
 }
-.button1:hover{
+.button1:hover {
   background-color: rgba(0, 0, 0, 0.194);
 }
 h3 {

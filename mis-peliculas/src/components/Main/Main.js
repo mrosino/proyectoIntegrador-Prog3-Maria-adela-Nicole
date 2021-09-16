@@ -12,7 +12,6 @@ class Main extends Component {
       text: [],
       change: false,
       loaded: false,
-      
     };
   }
   componentDidMount() {
@@ -30,20 +29,16 @@ class Main extends Component {
         console.log(movies);
       });
 
-      fetch(
-        'https://api.themoviedb.org/3/genre/movie/list?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US'
-      )
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US"
+    )
       .then((response) => response.json())
       .then((genre) => {
-        this.setState ({
-          genre: genre.results
-        })
-
-        
-
-      })
+        this.setState({
+          genre: genre.results,
+        });
+      });
   }
-
 
   addMore() {
     let url =
@@ -137,9 +132,13 @@ class Main extends Component {
             </main>
           </section>
           <div className="bottom">
-          <button className="button1" type="button" onClick={() => this.addMore()}>
-           Load more
-          </button>
+            <button
+              className="button1"
+              type="button"
+              onClick={() => this.addMore()}
+            >
+              Load more
+            </button>
           </div>
         </main>
       </React.Fragment>
