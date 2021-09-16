@@ -28,6 +28,7 @@ class Card extends Component {
       <React.Fragment>
         <article className={`${this.props.display ? "card" : "card1"}`}>
           <h3 className="title">{this.props.movies.title}</h3>
+          
 
           <img
             className="imagen"
@@ -65,12 +66,12 @@ class Card extends Component {
             {this.state.phrase}
           </button>
           <div>
-            <a className="tap" href="#openModal">
+            <a className="tap" href={`#openModal${this.props.movies.id}`}>
               <button className="button">Tap for description</button>
             </a>
           </div>
           </div>
-          <div id="openModal" className="modalDialog">
+          <div id={`openModal${this.props.movies.id}`} className="modalDialog">
             <div>
               <a href="#close" title="Close" className="close">
                 X
