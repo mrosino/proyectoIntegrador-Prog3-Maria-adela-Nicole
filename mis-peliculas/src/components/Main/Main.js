@@ -52,6 +52,7 @@ class Main extends Component {
     let moviesLeft = this.state.movies.filter((movies) => movies.id !== id);
     this.setState({
       movies: moviesLeft,
+      inicialMovies: moviesLeft,
     });
   };
 
