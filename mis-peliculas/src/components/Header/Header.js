@@ -27,9 +27,11 @@ class Header extends Component {
             </div>
             
 
-            <button className="button" type="button" onClick={() => this.props.display()}>
+            <button className="button tooltip" type="button" onClick={() => this.props.display()}>
             {this.props.change  ?  <BiDotsVertical /> : <BiListUl />}
           
+            <span class="tooltiptext">Change display</span>
+       
             </button>
           </section>
         </header>

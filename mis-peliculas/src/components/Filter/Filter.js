@@ -30,7 +30,7 @@ class Filter extends Component {
           type="text"
           onChange={(event) => this.changeControl(event)}
           value={this.state.value}
-          placeholder="Buscar..."
+          placeholder="Search titles.."
         />
       </form>
     );
