@@ -28,15 +28,14 @@ h1 {
   font-size: 24px;
 }
 header {
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375b6d",endColorstr="#223843",GradientType=1);
-  height: 100px;
 }
 .main {
+  margin-top: 120px;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   padding: 10px;
-  margin: 10px;
+
   width: 100%;
   align-items: center;
 }
@@ -51,11 +50,12 @@ header {
   align-self: flex-start;
 }
 .main1 {
+  margin-top: 120px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 10px;
-  margin: 10px;
+
   width: 100%;
 }
 

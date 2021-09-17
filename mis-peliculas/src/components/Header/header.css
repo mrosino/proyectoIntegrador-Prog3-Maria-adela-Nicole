@@ -1,6 +1,6 @@
 .img{
 z-index: 0;
-width: 60%;
+width: 50%;
 }
 .logo{
     width: 15%;
@@ -44,10 +44,23 @@ width: 60%;
   }
 
 .header{
+width: 100%;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-margin-left: 100px;
-margin-right: 100px;
+
+position: fixed;
+background: -webkit-linear-gradient(
+    351deg,
+    rgba(181, 125, 125, 1) 0%,
+    rgba(87, 35, 54, 1) 100%
+  );
+  background: linear-gradient(
+    351deg,
+    rgba(181, 125, 125, 1) 0%,
+    rgba(87, 35, 54, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b57d7d",endColorstr="#572336",GradientType=1);
+
 }
