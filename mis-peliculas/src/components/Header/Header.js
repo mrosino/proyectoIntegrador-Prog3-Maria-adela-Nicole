@@ -30,7 +30,7 @@ class Header extends Component {
             <button className="button tooltip" type="button" onClick={() => this.props.display()}>
             {this.props.change  ?  <BiDotsVertical /> : <BiListUl />}
           
-            <span class="tooltiptext">Change display</span>
+            <span className="tooltiptext">Change display</span>
        
             </button>
           </section>

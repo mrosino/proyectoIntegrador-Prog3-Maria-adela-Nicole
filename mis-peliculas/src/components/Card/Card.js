@@ -24,7 +24,9 @@ class Card extends Component {
   }
 
   render() {
+   
     return (
+     
       <React.Fragment>
         <article className={`${this.props.display ? "card" : "card1"}`}>
           <h3 className="title">{this.props.movies.title}</h3>
@@ -43,15 +45,15 @@ class Card extends Component {
               Rating {this.props.movies.vote_average}
             </p>
             <p>
-              {" "}
-              ATP {this.props.movies.adult}
+            {this.props.movies.adult ? "Not suitable for all public" : "Suitable for all public"}
+
             </p>
             <p>
-              {" "}
+             
               Release Date: {this.props.movies.release_date}
             </p>
             <p>
-              {" "}
+         
               Popularity: {this.props.movies.popularity}
             </p>
             </div>
@@ -67,7 +69,8 @@ class Card extends Component {
               {this.state.phrase}
             </button>
             <div>
-              <a className="tap" href={`#openModal${this.props.movies.id}`}>
+              <a className="tap" href={`#openModal${this.props.movies.id}`}> 
+             
                 <button className="button">Tap for description</button>
               </a>
             </div>

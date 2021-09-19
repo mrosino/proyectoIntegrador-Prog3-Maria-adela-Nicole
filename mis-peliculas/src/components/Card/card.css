@@ -54,13 +54,14 @@
   bottom: 0;
   left: 0;
   background: #3f272761;
-  z-index: 99999;
+  z-index: 1;
   opacity: 0;
   -webkit-transition: opacity 400ms ease-in;
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
   pointer-events: none;
 }
+/* atenti! */
 .modalDialog:target {
   opacity: 1;
   pointer-events: auto;
