@@ -9,7 +9,6 @@ class Main extends Component {
       movies: [],
       page: 2,
       inicialMovies: [],
-      text: [],
       change: false,
       loaded: false,
     };
@@ -24,19 +23,14 @@ class Main extends Component {
           movies: movies.results,
           loaded: true,
           inicialMovies: movies.results,
-        });
-
-        console.log(movies);
-      });
-
     
+        });
+      });
   }
-
   addMore() {
     let url =
       "https://api.themoviedb.org/3/movie/popular?api_key=35c3a4bec2a3c008c9fa7737b86aadc1&language=en-US&page=" +
       this.state.page;
-
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -77,7 +71,6 @@ class Main extends Component {
   }
 
   render = () => {
-    //poner loader
     return (
       <React.Fragment>
         <Header
@@ -86,17 +79,7 @@ class Main extends Component {
           change={this.state.change}
         />
 
-        <div>
-          {/* <h3>Filtros</h3>
-          <div className="container-filtros">
-            <button className="button-1" onClick={this.state.orderByNombre}>
-              Ordenar por Nombre
-            </button>
-            <button className="button-1" onClick={this.state.orderByRating}>
-              Ordenar por Rating
-            </button>
-          </div> */}
-        </div>
+        <div></div>
         <main>
           <section className="card-container">
             <section className="navigation">
@@ -113,8 +96,7 @@ class Main extends Component {
                     <Card
                       movies={movies}
                       key={idx}
-                      remove={this.remove}
-                      text={this.state.text}
+                      remove={this.remove}                     
                       display={this.state.change}
                     />
                   );

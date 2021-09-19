@@ -38,21 +38,23 @@ class Card extends Component {
           />
 
           <section className="aditional-info">
-            <p className={`${this.state.more ? "show" : "hide"}`}>
+            <div className={`${this.state.more ? "show" : "hide"}`}>
+            <p >
               Rating {this.props.movies.vote_average}
             </p>
-            <p className={`${this.state.more ? "show" : "hide"}`}>
+            <p>
               {" "}
               ATP {this.props.movies.adult}
             </p>
-            <p className={`${this.state.more ? "show" : "hide"}`}>
+            <p>
               {" "}
               Release Date: {this.props.movies.release_date}
             </p>
-            <p className={`${this.state.more ? "show" : "hide"}`}>
+            <p>
               {" "}
               Popularity: {this.props.movies.popularity}
             </p>
+            </div>
           </section>
           <div className="buttons">
             <button

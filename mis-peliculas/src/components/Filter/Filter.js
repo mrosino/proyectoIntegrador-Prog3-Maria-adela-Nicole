@@ -23,7 +23,7 @@ class Filter extends Component {
   }
 
   render() {
-    console.log(this.props);
+   
     return (
       <form onSubmit={(eventSubmit) => this.notAuto(eventSubmit)}>
         <input className="filter"
