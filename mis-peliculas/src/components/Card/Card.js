@@ -77,7 +77,7 @@ class Card extends Component {
           </div>
           <div id={`openModal${this.props.movies.id}`} className="modalDialog">
             <div>
-              <a href="#close" title="Close" className="close">
+              <a href="#close" className="close">
                 X
               </a>
               <h2>{this.props.movies.title} </h2>

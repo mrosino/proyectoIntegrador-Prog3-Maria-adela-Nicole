@@ -29,7 +29,7 @@ h1 {
 }
 
 .main {
-  margin-top: 7rem;
+  margin-top: 9rem;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
